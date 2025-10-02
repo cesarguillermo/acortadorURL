@@ -6,7 +6,7 @@ function App() {
   const [url, setUrl] = useState("")
   const [shortUrl, setShortUrl] = useState("")
   const getShortUrl = async () => {
-    const response = await fetch("http://localhost:8080/api/shorten", {
+    const response = await fetch("https://acortadorurl-dh3g.onrender.com/api/shorten", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

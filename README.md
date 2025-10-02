@@ -141,11 +141,37 @@ cd fronted/short-url-ui
 npm run lint
 ```
 
+## 🌐 Despliegue en Producción
+
+### Backend (Render)
+El backend está desplegado en Render: `https://acortadorurl-dh3g.onrender.com`
+
+### Frontend (Cloudflare Pages)
+Para desplegar el frontend en Cloudflare Pages:
+
+1. **Sube tu código a GitHub** (si no lo has hecho ya)
+2. **Ve a [Cloudflare Pages](https://pages.cloudflare.com/)**
+3. **Conecta tu repositorio de GitHub**
+4. **Configura el build:**
+   - **Framework preset**: Vite
+   - **Build command**: `npm run build`
+   - **Build output directory**: `fronted/short-url-ui/dist`
+   - **Root directory**: `fronted/short-url-ui`
+
+5. **Variables de entorno** (si es necesario):
+   - `VITE_API_URL`: `https://acortadorurl-dh3g.onrender.com`
+
+6. **Haz clic en "Save and Deploy"**
+
+### Configuración CORS
+Asegúrate de que en Render tengas configurada la variable de entorno:
+- `CORS_ALLOWED_ORIGINS`: `https://tu-proyecto.pages.dev` (reemplaza con tu dominio de Cloudflare Pages)
+
 ## 📝 Notas de Desarrollo
 
 - El almacenamiento actual es en memoria, por lo que las URLs se pierden al reiniciar el servidor
 - Los slugs generados son de 6 caracteres alfanuméricos
-- El proyecto está configurado para desarrollo local
+- El proyecto está configurado para desarrollo local y producción
 
 
 
