@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: shortenurl-backend
+    env: java
+    plan: free
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: SPRING_PROFILES_ACTIVE
+        value: production
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://tu-frontend.pages.dev
+      - key: APP_BASE_URL
+        value: https://shortenurl-backend.onrender.com

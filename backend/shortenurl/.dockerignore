@@ -1,0 +1,10 @@
+target/
+.git/
+.gitignore
+README.md
+HELP.md
+.mvn/wrapper/maven-wrapper.jar
+**/.DS_Store
+**/node_modules
+**/.idea
+**/*.iml
